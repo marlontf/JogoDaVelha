@@ -3,6 +3,9 @@ let board = ['', '', '', '', '', '', '', '', '']
 let playerTime = 0
 let symbols = ['o', 'x']
 let gameOver = false
+let velha = false
+
+let winSequence = ['', '', '']
 let winStates = [
    [0, 1, 2],
    [3, 4, 5],
@@ -27,8 +30,8 @@ function handleMove(position) {
       gameOver = isWin()
 
       if (!gameOver) {
-         
-         playerTime = (playerTime == 0)?1:0
+
+         playerTime = (playerTime == 0) ? 1 : 0
 
       }
 
@@ -40,8 +43,6 @@ function handleMove(position) {
 
 function isWin() {
 
-   
-
    for (let i = 0; i < winStates.length; i++) {
       let seq = winStates[i];
 
@@ -50,6 +51,15 @@ function isWin() {
       let pos3 = seq[2]
 
       if (board[pos1] == board[pos2] && board[pos1] == board[pos3] && board[pos1] != '') {
+
+         winSequence.forEach((element, index) => {
+            winSequence[index] = seq[index]
+         })
+
+         return true
+
+      }else if(board[0] != '' && board[1] != '' && board[2] != '' && board[3] != '' && board[4] != '' && board[5] != '' && board[6] != '' && board[7] != '' && board[8] != '' ){
+         velha = true;
          return true
       }
    }

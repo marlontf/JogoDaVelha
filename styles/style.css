@@ -10,7 +10,7 @@ h1 {
    position: relative;
    width: 100px;
    height: 100px;
-   background-color: beige;
+   background-color: #b7e4c7;
    border: 1px solid gray;
    display: inline-block;
 }
@@ -35,4 +35,21 @@ h1 {
    left: 0;
    right: 0;
    bottom: 0;
+}
+
+#result{
+   color: green;
+   font-weight: bold;
+   font-size: 30px;
+}
+
+#resetButton{
+   background-color:  #b7e4c7;
+   color: green;
+   font-weight: bolder;
+   padding:10px;
+   border-radius: 10px;
+   margin-bottom: 30px;
+   border: 1px solid green;
+   cursor: pointer;
 }
